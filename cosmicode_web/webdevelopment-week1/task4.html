@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexbox</title>
+  </head>
+  <style>
+    .navbar a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: rgb(5, 74, 77);
+      margin: 20px 10px 10px 30px;
+      font-weight: 900;
+      display: inline-block;
+    }
+    .navbar a:hover{
+        color: rgb(18, 102, 130);
+    }
+    .ruler {
+      background-color: rgb(6, 94, 99);
+      height: 4px;
+      width: 100%;
+      margin-top: 30px;
+    }
+    .main-flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .statements {
+      align-items: flex-start;
+      margin-right: 200px;
+    }
+    .statements p {
+      margin-top: 45px;
+      margin-right: 20px;
+      margin-left: 20px;
+      font-size: 1.3rem;
+      font-weight: 900;
+      border-bottom: 1px solid black;
+    }
+    .statements p:hover{
+        color:rgb(8, 61, 100)
+    }
+    .forest {
+      display: flex;
+    }
+    .forest img {
+      width: 1000px;
+      height: 400px;
+      box-shadow: 10px 10px 10px 10px rgb(2, 27, 68);
+      border-radius:10px 10px 10px 10px;
+      margin-top: 20px;
+    }
+    .forest img:hover{
+        opacity:0.9;
+    }
+    .forest2 h3 {
+      color: rgb(2, 27, 68);
+      font-size: 2rem;
+      margin-left: 300px;
+    }
+    .forest2 p{
+        margin-left: 300px;
+    }
+    @media (max-width: 768px) {
+  .main-flex { 
+    flex-direction: column; 
+}
+  .statements {
+     margin-right: 0; 
+    }
+    .forest img { 
+        width: 100%; height: auto;
+     }
+     .forest2 h3, .forest2 p{
+        width:100%;
+        text-align: center;
+        margin-left: 0;
+     }
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <nav>
+        <a href="./task4.html">Layout</a>
+        <a class="side" href="./task4.html">Home</a>
+        <div class="ruler"></div>
+      </nav>
+    </div>
+    <div class="main-flex">
+      <div class="statements">
+        <p>Home</p>
+        <p>About</p>
+        <p>Services</p>
+        <p>Contact</p>
+      </div>
+      <div class="forest">
+        <img
+          src="https://t3.ftcdn.net/jpg/01/92/37/00/360_F_192370087_XZ6MIAyl4PgkKglf08hnWaKcLWIUzf7N.jpg"
+          alt="forest"
+        />
+      </div>
+      <div class="forest2" style="margin-top: 30px;">
+        <h3>Forest Beauty</h3>
+        <p >
+         A forest is more than just trees; it is a living, breathing world of wonder. Its beauty lies in its details—the interplay of light, the chorus of sounds, the textures underfoot, and the ever-changing seasons. To walk through a forest is to step into a timeless realm where nature’s artistry unfolds in every leaf, every whisper of the wind, and every fleeting glimpse of wildlife. It is a reminder of the Earth’s boundless beauty and the delicate balance of life.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

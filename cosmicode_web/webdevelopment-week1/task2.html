@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computer Information</title>
+  </head>
+  <style>
+    body {
+      color: black;
+    }
+    .history {
+      margin-top: 70px;
+      margin-left: 20px;
+      box-shadow: 3px 3px 3px 3px rgb(170, 162, 162);
+      padding:30px 30px 30px 30px;
+      border-radius: 10px 10px 10px 10px;
+      margin-bottom: 30px;
+    }
+    .history h3 {
+      margin-top: 10px;
+      font-size: 2rem;
+      font-style: italic;
+    }
+    .main-heading {
+      font-size: 3rem;
+      font-style: italic;
+      font-weight: bolder;
+      width: 900px;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 3px 3px rgb(97, 97, 134);
+    }
+    .main-image {
+      width: 80%;
+      height: 450px;
+      border-radius: 10px 10px 10px 10px;
+      box-shadow: 5px 5px 5px 5px rgb(97, 97, 134);
+    }
+    .information-wrap {
+      width: 70%;
+      font-size: 1.4rem;
+    }
+    .components h3 {
+      margin-top: 10px;
+      font-size: 2rem;
+      margin-bottom: 3px;
+      font-style: italic;
+    }
+    .components {
+      margin-top: 50px;
+      font-size: 1rem;
+      margin-left: 60px;
+    }
+    .components ul {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      display: grid;
+    }
+    .components li {
+      list-style: none;
+      box-shadow: 3px 3px 3px 3px rgb(170, 162, 162);
+      border-radius: 5px 5px 5px 5px;
+      gap: 5px;
+      padding: 8px 8px 8px 8px;
+      margin: 10px 10px 10px 10px;
+      display: flex;
+      align-items: center;
+    }
+    .components li:hover {
+      background-color: rgb(223, 219, 214);
+    }
+    .underlined {
+      height: 1.5px;
+      width: 300px;
+      background: rgb(101, 146, 178);
+      margin-top: 0;
+    }
+    ul img {
+      width: 50px;
+      height: 50px;
+      align-items: flex-start;
+    }
+    .details {
+      margin-top: 50px;
+    }
+    .details h4 {
+      font-size: 1.7rem;
+      margin-bottom: 3px;
+      font-style: italic;
+      display: flex;
+    }
+    .details h3 {
+      font-size: 2rem;
+      margin-bottom: 3px;
+      font-style: italic;
+    }
+    .details img {
+      width: 200px;
+      height: 100px;
+    }
+    .details p {
+      padding-top: 50px;
+      font-size: 1rem;
+      display: flex;
+    }
+    .details h4 {
+      font-size: 1.5rem;
+    }
+    .align {
+      grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+      display: grid;
+      box-shadow: 7px 7px 7px 7px rgb(170, 162, 162);
+      margin: 20px 20px 20px 20px;
+      border-radius: 10px 10px 10px 10px;
+      align-items: center;
+    }
+    .align:hover{
+        background-color: rgb(236, 231, 225);
+    }
+    .main-body{
+        margin:30px 30px 30px 30px;
+    }
+  </style>
+  <body>
+    <div class="main-body">
+      <h1 class="main-heading" style="margin-top: 20px">
+        Information About Computer
+      </h1>
+      <center>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhOt8yVPy6GGZ4tjCXHpImPPqpNoEwJGeE2Q&s"
+          alt="computer-image"
+          class="main-image"
+        />
+      </center>
+      <div class="history">
+        <h3>History Of Computer</h3>
+        <hr />
+        <p class="information-wrap">
+          One of the earliest and most well-known devices was an abacus. Then in
+          1822, the father of computers, Charles Babbage began developing what
+          would be the first mechanical computer. And then in 1833 he actually
+          designed an Analytical Engine which was a general-purpose computer.
+        </p>
+        <p class="information-wrap">
+          After this every year innovations were made and this process is still
+          going on, bringing revolution to the technology after every passing
+          year
+        </p>
+      </div>
+      <hr />
+      <div class="components">
+        <h3>Components of Computer</h3>
+        <div class="underlined"></div>
+        <ul>
+          <li>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Intel_i9-14900KF_CPU.jpg"
+              alt="CPU"
+            />
+            Central Processing Unit (CPU)
+          </li>
+          <li>
+            <img
+              src="https://cdn.britannica.com/64/170564-050-7A0A86A2/motherboard-for-computer.jpg"
+              alt="Motherboard"
+            />
+            Motherboard
+          </li>
+          <li>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuyEGP5hTNDghng0zgDmYmCcRonucurcwpaQ&s"
+              alt="RAM"
+            />
+            Random Access Memory (RAM)
+          </li>
+          <li>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhgsR4uOWeMZKapeMrMVM_HlKMkzLI-G_cjw&s"
+              alt="HDD"
+            />
+            Hard Disk Drive (HDD)
+          </li>
+          <li>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzjkhbiw8eWopn5opUfaICfSiVWO6Ba29Vkg&s"
+              alt="SSD"
+            />
+            Solid State Drive (SSD)
+          </li>
+          <li>
+            <img
+              src="https://www.minitool.com/images/uploads/lib/2020/08/power-supply-unit/power-supply-unit-1.jpg"
+              alt="PSU"
+            />
+            Power Supply Unit (PSU)
+          </li>
+          <li>
+            <img
+              src="https://www.techtarget.com/rms/onlineImages/virtual_desktop-amd_ati_mobile.jpg"
+              alt="GPU"
+            />
+            Graphics Processing Unit (GPU)
+          </li>
+          <li>
+            <img
+              src="https://b2c-contenthub.com/wp-content/uploads/2023/11/pcw12_Hitachi_ODD.jpg?quality=50&strip=all&w=1200"
+              alt="Optical Drive"
+            />
+            Optical Drive (CD/DVD)
+          </li>
+          <li>
+            <img
+              src="https://www.ekwb.com/wp-content/uploads/2023/10/2.-Air-Cooling-vs-Liquid-Cooling-liquid-cooler-comprised-of-a-water-block-a-pump-tubing-and-a-radiator-with-fans.jpg"
+              alt="Cooling System"
+            />
+            Cooling System (Fans or Liquid Cooling)
+          </li>
+          <li>
+            <img
+              src="https://www.ion.com.pk/wp-content/uploads/REMALL-V8-Audio-Interface-a.jpg"
+              alt="Sound Card"
+            />
+            Sound Card
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="details">
+        <h3>Details About the Components</h3>
+        <div class="underlined" style="margin-left: 10px; margin-bottom: 70px;"></div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Intel_i9-14900KF_CPU.jpg"
+              alt="CPU"
+            />
+            Central Processing Unit(CPU)
+          </h4>
+          <p class="information-wrap">
+            The CPU, or Central Processing Unit, is the "brain" of a computer,
+            responsible for executing instructions and performing calculations.
+            It's the primary component that processes data, manages other
+            hardware components, and runs software. Essentially, it's the core
+            component that enables a computer to perform any task.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://cdn.britannica.com/64/170564-050-7A0A86A2/motherboard-for-computer.jpg"
+              alt="Motherboard"
+            />
+            Motherboard
+          </h4>
+          <p class="information-wrap">
+            A motherboard is the central circuit board in a computer that
+            connects all other components, acting as a backbone for
+            communication and power distribution. It provides the foundation for
+            the CPU, memory, storage, and other peripherals to work together.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuyEGP5hTNDghng0zgDmYmCcRonucurcwpaQ&s"
+              alt="RAM"
+            />
+            Random Access Memory (RAM)
+          </h4>
+          <p class="information-wrap">
+            Random Access Memory (RAM) is the short-term, high-speed memory in a
+            computer that stores data and instructions currently being used by
+            the CPU. It's volatile, meaning data is lost when the computer is
+            turned off. RAM is crucial for fast and efficient processing, as it
+            allows the CPU to quickly access information needed for running
+            applications and programs.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhgsR4uOWeMZKapeMrMVM_HlKMkzLI-G_cjw&s"
+              alt="HDD"
+            />
+            Hard Disk Drive (HDD)
+          </h4>
+          <p class="information-wrap">
+            A Hard Disk Drive (HDD) is a data storage device that uses magnetic
+            platters to store and retrieve digital information. It's a
+            non-volatile storage medium, meaning it retains data even when
+            powered off. HDDs are commonly used as the primary or secondary
+            storage in computers, offering large storage capacities at a
+            relatively low cost per gigabyte compared to other storage
+            technologies like SSDs.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzjkhbiw8eWopn5opUfaICfSiVWO6Ba29Vkg&s"
+              alt="SSD"
+            />
+            Solid State Drive (SSD)
+          </h4>
+          <p class="information-wrap">
+            A Solid State Drive (SSD) is a storage device that uses flash memory
+            to store data, unlike traditional Hard Disk Drives (HDDs) which use
+            spinning disks and mechanical read/write heads. SSDs are known for
+            their speed, reliability, and efficiency, offering faster data
+            access, boot times, and overall system responsiveness. They are also
+            more durable, less prone to damage from drops or shocks, and consume
+            less power.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://www.minitool.com/images/uploads/lib/2020/08/power-supply-unit/power-supply-unit-1.jpg"
+              alt="PSU"
+            />
+            Power Supply Unit (PSU)
+          </h4>
+          <p class="information-wrap">
+            A Power Supply Unit (PSU) is a hardware component that converts AC
+            (Alternating Current) electricity from a wall outlet into stable,
+            low-voltage DC (Direct Current) power that computer components need.
+            It acts as the heart of the computer, providing the necessary power
+            to all internal parts, and is crucial for system stability and
+            performance.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://www.techtarget.com/rms/onlineImages/virtual_desktop-amd_ati_mobile.jpg"
+              alt="GPU"
+            />
+            Graphics Processing Unit (GPU)
+          </h4>
+          <p class="information-wrap">
+            A Graphics Processing Unit (GPU) is a specialized electronic circuit
+            designed to rapidly manipulate and alter memory to accelerate the
+            creation of images in a frame buffer intended for output to a
+            display. GPUs are crucial for handling graphics-intensive tasks such
+            as rendering 3D images, video editing, and gaming. They are also
+            increasingly used in high-performance computing (HPC), deep
+            learning, and other computationally intensive applications due to
+            their parallel processing capabilities.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://b2c-contenthub.com/wp-content/uploads/2023/11/pcw12_Hitachi_ODD.jpg?quality=50&strip=all&w=1200"
+              alt="Optical Drive"
+            />
+            Optical Drive (CD/DVD)
+          </h4>
+          <p class="information-wrap">
+            An optical drive (also known as an optical disc drive or ODD) is a
+            storage device that uses a laser to read and potentially write data
+            to optical discs like CDs, DVDs, and Blu-ray discs. These drives are
+            commonly found in computers and allow users to play music, watch
+            movies, install software from discs, and create backups.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://www.ekwb.com/wp-content/uploads/2023/10/2.-Air-Cooling-vs-Liquid-Cooling-liquid-cooler-comprised-of-a-water-block-a-pump-tubing-and-a-radiator-with-fans.jpg"
+              alt="Cooling System"
+            />
+            Cooling System (Fans or Liquid Cooling)
+          </h4>
+          <p class="information-wrap">
+            Both air cooling (using fans and heatsinks) and liquid cooling
+            (using a liquid coolant to transfer heat to a radiator) are methods
+            for managing the temperature of computer components. Liquid cooling
+            is generally more efficient and quieter, especially for
+            high-performance systems, but it can also be more expensive and
+            complex to install and maintain.
+          </p>
+        </div>
+        <div class="align">
+          <h4>
+            <img
+              src="https://www.ion.com.pk/wp-content/uploads/REMALL-V8-Audio-Interface-a.jpg"
+              alt="Sound Card"
+            />
+            Sound Card
+          </h4>
+          <p class="information-wrap">
+            A sound card, also known as an audio card, is a computer component
+            that enables the input and output of audio signals. It acts as an
+            intermediary between the computer's digital system and the analog
+            world of sound, converting digital data into analog signals for
+            speakers and headphones, and vice versa for microphones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
