@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .header {
+        background-color: rgb(7, 55, 84);
+        color: white;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        width: 100%;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .header p {
+        margin-right: 30px;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .header p:hover {
+        color: rgb(3, 132, 132);
+        cursor: pointer;
+      }
+      .container {
+        padding: 20px;
+      }
+      .container h2{
+        text-align: center;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+      .container h4{
+        text-align: center;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+      .image-container-caption {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .img-container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(43, 62, 75, 0.5);
+      }
+      .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .img-container:hover img {
+        transform: scale(1.05);
+      }
+      .img-container figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(121, 144, 144, 0.8);
+        color: white;
+        padding: 8px;
+        text-align: center;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      .img-container:hover figcaption {
+        background-color: rgba(7, 55, 84, 0.9);
+      }
+      @media (max-width: 600px) {
+        .header {
+          justify-content: center;
+        }
+        .header p {
+          margin-right: 15px;
+          font-size: 1.2rem;
+        }
+        .image-container-caption {
+          grid-template-columns: 1fr;
+        }
+        .img-container {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 3/2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <p>Home</p>
+      <p>About</p>
+      <p>Contact</p>
+    </div>
+    <div class="container">
+        <center>
+      <h2>Image Gallery</h2>
+      <h4>Images with Captions</h4>
+      </center>
+      <div class="image-container-caption">
+        <figure class="img-container">
+          <img
+            src="https://i.pinimg.com/236x/d1/d4/63/d1d46381d3c104837c94190352b4186b.jpg"
+            alt="sky"
+          />
+          <figcaption>Beautiful sky</figcaption>
+        </figure>
+        <figure class="img-container">
+          <img
+            src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg"
+            alt="puppies"
+          />
+          <figcaption>Cute puppies</figcaption>
+        </figure>
+        <figure class="img-container">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/045/132/934/small/a-beautiful-picture-of-the-eiffel-tower-in-paris-the-capital-of-france-with-a-wonderful-background-in-wonderful-natural-colors-photo.jpg"
+            alt="effile-tower"
+          />
+          <figcaption>Beautiful Eiffel Tower</figcaption>
+        </figure>
+        <figure class="img-container">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s"
+            alt="feather"
+          />
+          <figcaption>A feather</figcaption>
+        </figure>
+        <figure class="img-container">
+          <img
+            src="https://media.istockphoto.com/id/183412466/photo/eastern-bluebirds-male-and-female.jpg?s=612x612&w=0&k=20&c=6_EQHnGedwdjM9QTUF2c1ce7cC3XtlxvMPpU5HAouhc="
+            alt="parrots"
+          />
+          <figcaption>Nature's beautiful creatures</figcaption>
+        </figure>
+      </div>
+    </div>
+  </body>
+</html>
