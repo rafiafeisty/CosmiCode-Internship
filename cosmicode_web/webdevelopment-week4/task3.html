@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+    <style>
+      .modal-btn {
+        width: 160px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1px solid rgb(13, 72, 56);
+        margin-top: 30px;
+      }
+      .modal-btn:hover {
+        background-color: rgb(13, 72, 56);
+        color: white;
+        cursor: pointer;
+      }
+      .modal h2 {
+        color: rgb(2, 50, 50);
+      }
+      .form-group {
+        margin-top: 30px;
+      }
+      input {
+        margin-left: 20px;
+      }
+      .modal {
+        position: relative;
+        border: 1px solid rgb(2, 50, 50);
+        width: 40%;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+        z-index: 2;
+        background-color: white;
+      }
+
+      .style-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: white;
+        border: none;
+        height: 40px;
+        width: 40px;
+        font-size: 2rem;
+        line-height: 1;
+        padding: 0;
+      }
+      .style-close:hover {
+        font-weight: bolder;
+        cursor: pointer;
+      }
+
+      .close-btn,
+      .submit-btn {
+        width: 90px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1px solid rgb(13, 72, 56);
+        margin-top: 30px;
+        margin-right: auto;
+      }
+      .close-btn:hover,
+      .submit-btn:hover {
+        background-color: rgb(13, 72, 56);
+        color: white;
+        cursor: pointer;
+      }
+
+      .dark {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .submit-modal {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        border: 2px solid rgb(13, 72, 56);
+        border-radius: 10px;
+        padding: 30px;
+        z-index: 3;
+        display: none;
+        color: rgb(13, 72, 56);
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modal Display</h1>
+    <div class="modal-button">
+      <button class="modal-btn" onclick="modal()">Active Modal</button>
+    </div>
+
+    <center>
+      <div class="modal" id="mainModal">
+        <button class="style-close" onclick="closeModal()">&times;</button>
+        <h2>Modal Title</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="name" id="username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="password" id="password" />
+        </div>
+        <button class="submit-btn" onclick="submitForm()">Submit</button>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+
+      <div class="submit-modal" id="submitModal">
+        Submitted Successfully 
+      </div>
+    </center>
+
+    <script>
+      function modal() {
+        document.querySelector("body").classList.add("dark");
+        document.getElementById("mainModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.querySelector("body").classList.remove("dark");
+        document.getElementById("mainModal").style.display = "none";
+      }
+
+      function submitForm() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (username === "" || password === "") {
+          alert("Please fill in both fields.");
+          return;
+        }
+
+        document.getElementById("submitModal").style.display = "block";
+
+        setTimeout(() => {
+          document.getElementById("submitModal").style.display = "none";
+          closeModal();
+
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+        }, 2500);
+      }
+    </script>
+  </body>
+</html>

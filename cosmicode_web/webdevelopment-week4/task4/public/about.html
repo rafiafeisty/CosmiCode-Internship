@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Td2HeqbyAyBnrQ8bSqKnogAf98FTxsozLQ&s");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        background-color: #f0f0f0; 
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+      background-color: #063f36;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      height: 50px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .header-links {
+      display: flex;
+      gap: 10px;
+    }
+    .header a {
+      text-decoration: none;
+      color: white;
+    }
+    .header a:hover {
+      color: #068976;
+      font-size: 1.2rem;
+    }
+    .footer {
+      background-color: rgb(30, 30, 30);
+      color: white;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: auto;
+      height: 60px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    .footer p {
+      padding-top: 10px;
+      margin: 0;
+    }
+    .content{
+        margin-left:20px;
+        animation: appearance 2s;
+    }
+    .content h2{
+        color: #063f36;
+        font-style: italic;
+        font-size: 2rem;
+    }
+    .content p, .content ul{
+        width:50%;
+    }
+    @keyframes appearance{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    .content li{
+        margin-top: 20px;
+        font-size: 1.2rem;
+    }
+</style>
+<body>
+    <div class="header">
+      <h2>WeChat</h2>
+      <div class="header-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+      </div>
+    </div>
+    <div class="content">
+        <h2>About Us</h2>
+        <p>WeChat is a revolutionary chatting application designed with simplicity and user experience at its core. Our mission is to provide a seamless and interactive platform where users can connect effortlessly and enjoy real-time conversations without interruptions. We believe in fostering clear and efficient communication, making your online interactions more engaging and meaningful.</p>
+        <h2>Features</h2>
+        <ul>
+            <li>Enjoy a beautiful and intuitive interface that makes chatting a pleasure.</li>
+            <li>Experience fluid, real-time messaging with simultaneous conversations.</li>
+            <li>Our platform is designed to be accessible and comfortable for all users.</li>
+        </ul>
+        <div class="design"></div>
+    </div>
+    <div class="footer">
+      <center>
+        <p>©2025 | Cosmicode Internship Week4</p>
+      </center>
+    </div>
+</body>
+</html>

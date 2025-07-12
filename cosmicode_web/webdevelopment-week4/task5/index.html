@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<style>
+    body{
+        margin:0;
+        overflow: hidden;
+    }
+    .search-container{
+        margin: auto;
+    }
+    .form-group{
+        margin:auto;
+        margin-top:50px;
+        display: flex;
+        gap:10px;
+        width:50%;
+    }
+    .search{
+        background-color: white;
+        border: 1px solid rgb(5, 45, 54);
+        border-radius: 5px 5px 5px 5px;
+        height:40px;
+        width:60px;
+    }
+    .search:hover{
+        background-color: rgb(5, 45, 54);
+        color:white;
+        cursor: pointer;
+    }
+    input{
+        height:20px;
+        border-radius: 5px 5px 5px 5px;
+        padding:5px;
+        width: 80%;
+    }
+    input:focus{
+        outline:none;
+        border:1px solid rgb(5, 45, 54);
+        box-shadow: 0px 0px 5px rgb(133, 225, 246);
+    }
+    label{
+        margin-top:5px;
+        color:rgb(5, 45, 54);
+        font-size: 1.2rem;
+    }
+    h1{
+        color: white;
+        margin-left: 200px;
+        margin-top: 40px;
+    }
+    img{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom: 0;
+        z-index: -1;
+        object-fit: cover;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); 
+        z-index: -1;
+    }
+    .information-display{
+        margin:auto;
+        color:white;
+        width:50%;
+        margin-top: 40px;
+        margin-right: 80px;
+        font-size: 1.5rem;
+    }
+    .information-display div{
+        margin-top:10px;
+    }
+    #design{
+        padding-left: 20px;
+    }
+ .Clouds::before {
+    content: "☁";
+    font-size:5rem;
+    color: #a3b8c2; 
+}
+
+.Clear::before {
+    content: "☀️";
+    font-size:5rem;
+    color: #fdd835; 
+}
+
+.Rain::before {
+    content: "🌧";
+    font-size:5rem;
+    color: #4fc3f7;
+}
+
+.Snow::before {
+    content: "❄";
+    font-size:5rem;
+    color: #90caf9; 
+}
+.cards{
+    padding-top:50px;
+    display: flex;
+    gap:50px;
+    margin: auto;
+    width:50%;
+    margin-right: 186px;
+}
+.ruler{
+    height:1.5px;
+    width:80px;
+    background-color: rgb(5, 45, 54);
+}
+.small-card {
+        background: rgba(255, 255, 255, 0.5);
+        width: 100px;
+        height: 80px;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .small-card p {
+        margin: 5px 0;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .small-card p:first-child {
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <div class="background">
+    <img src="https://papers.co/wallpaper/papers.co-na26-nature-mountain-green-blue-36-3840x2400-4k-wallpaper.jpg" alt="background-pic">
+    </div>
+    <h1>Weather App</h1>
+    <div class="search-container">
+        <div class="form-group">
+            <input type="text" id="search-query" placeholder="Enter the city">
+            <button class="search" onclick="searching()">Search</button>
+        </div>
+    </div>
+    <div class="information-display">
+        <div class="location">City: <span id="location"></span></div>
+        <div id="design"></div>
+        <div class="temperature">Temperature: <span id="temperature"></span>°C</div>
+        <div class="weather"><span id="weather"></span></div>
+    </div>
+    <div class="cards" id="card"></div>
+</body>
+<script>
+    async function searching(){
+        const design = document.getElementById("design");
+        const card = document.getElementById("card");
+        design.className = "";
+        card.innerHTML = ""; 
+        
+        const searchQuery = document.getElementById("search-query").value;
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=e5f12493033e40b9f3d5c84b5699e0ee`);
+        const data = await response.json();
+        
+        const city = document.getElementById("location");
+        const temp = document.getElementById("temperature");
+        const weather = document.getElementById("weather");
+        
+        city.innerHTML = data.name;
+        var temperature = data.main.temp - 273.15;
+        temp.innerHTML = temperature.toFixed(3);
+        weather.innerHTML = data.weather[0].main;
+        design.classList.add(data.weather[0].main);
+        
+        // Create cards
+        const feelLike = document.createElement("div");
+        feelLike.classList.add("small-card");
+        feelLike.innerHTML = `<p><strong>Feels Like</strong></p>
+                                <div class="ruler"></div>
+                             <p>${(data.main.feels_like - 273.15).toFixed(1)}°C</p>`;
+        
+        const pressure = document.createElement("div");
+        pressure.classList.add("small-card");
+        pressure.innerHTML = `<p><strong>Pressure</strong></p>
+                                <div class="ruler"></div>
+                            <p>${data.main.pressure} hPa</p>`;
+        
+        const humidity = document.createElement("div");
+        humidity.classList.add("small-card");
+        humidity.innerHTML = `<p><strong>Humidity</strong></p>
+                                <div class="ruler"></div>
+                            <p>${data.main.humidity}%</p>`;
+        
+        card.appendChild(feelLike);
+        card.appendChild(pressure);
+        card.appendChild(humidity);
+    }
+</script>
+</html>

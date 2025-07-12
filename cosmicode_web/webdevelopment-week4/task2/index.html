@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Filtering</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      body.light {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      body.dark {
+        background-color: #0e2023;
+        color: #f0f0f0;
+      }
+
+      .dark .content tr:nth-child(even) {
+        background-color: #2a3a3d;
+      }
+
+      .dark .content tr:hover {
+        background-color: #3a4a4d;
+      }
+
+      .toggle-container {
+        display: flex;
+        gap: 20px;
+        margin-right: 20px;
+      }
+
+      /* Sun/Moon Toggle */
+      .toggle-sun-moon {
+        position: relative;
+        width: 60px;
+        height: 34px;
+        background-color: #ccc;
+        border-radius: 34px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .toggle-sun-moon .slider {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 26px;
+        height: 26px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s, background-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      .toggle-sun-moon input {
+        display: none;
+      }
+
+      .toggle-sun-moon input:checked + .slider {
+        transform: translateX(26px);
+      }
+
+      .toggle-sun-moon input:checked ~ .slider::before {
+        content: "🌙";
+      }
+
+      .toggle-sun-moon .slider::before {
+        content: "☀️";
+      }
+
+      .dark .toggle-sun-moon {
+        background-color: #4a4a4a;
+      }
+      .footer {
+        background-color: rgb(30, 30, 30);
+        color: white;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        margin-top: auto;
+        height: 60px;
+      }
+
+      .footer p {
+        padding-top: 10px;
+        margin: 0;
+      }
+      .header {
+        background-color: rgb(8, 67, 83);
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+      }
+      .header h1 {
+        margin-left: 20px;
+      }
+      table {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .content tr {
+        margin-top: 10px;
+      }
+      .content tr:nth-child(even) {
+        background-color: #c7c7c7;
+      }
+      .content td,
+      .content th {
+        border: 0.5px solid #ddd;
+      }
+      .content tr:hover {
+        background-color: #a7a4a4;
+      }
+      .content td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .content th {
+        background-color: rgb(8, 67, 83);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: white;
+      }
+      .content {
+        border-collapse: collapse;
+      }
+      input {
+        height: 30px;
+        width: 50%;
+        padding-left: 7px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .input {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        margin-left: 20px;
+        align-items: center;
+      }
+      .filtertext {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <div class="header">
+      <h1>Table Filtration</h1>
+      <div class="toggle-container">
+        <label class="toggle-sun-moon">
+          <input type="checkbox" id="sun-moon-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="content">
+      <div class="input">
+        <label for="filter" class="filtertext"><strong>Filter Table: </strong></label>
+        <input type="text" id="filter" placeholder="Type to filter..." />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maria Anders</td>
+            <td>30</td>
+            <td>New York</td>
+          </tr>
+          <tr>
+            <td>Christina Berglund</td>
+            <td>25</td>
+            <td>Los Angeles</td>
+          </tr>
+          <tr>
+            <td>Francisco Chang</td>
+            <td>28</td>
+            <td>Chicago</td>
+          </tr>
+          <tr>
+            <td>Roland Mendel</td>
+            <td>29</td>
+            <td>Houston</td>
+          </tr>
+          <tr>
+            <td>Helen Bennett</td>
+            <td>31</td>
+            <td>Chicago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <p>©2025 | Cosmicode Internship Week4</p>
+    </div>
+
+    <script>
+      const sunMoonToggle = document.getElementById("sun-moon-toggle");
+      const body = document.body;
+
+      function toggleTheme() {
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+      }
+
+      sunMoonToggle.addEventListener("change", toggleTheme);
+
+      document.getElementById('filter').addEventListener('input', function() {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+          const cells = row.getElementsByTagName('td');
+          let match = false;
+
+          Array.from(cells).forEach(cell => {
+            if (cell.textContent.toLowerCase().includes(filter)) {
+              match = true;
+            }
+          });
+
+          row.style.display = match ? '' : 'none';
+        });
+      });
+    </script>
+  </body>
+</html>

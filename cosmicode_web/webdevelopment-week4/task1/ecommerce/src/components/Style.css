@@ -1,0 +1,196 @@
+.navbar{
+    background: rgb(31, 13, 77);
+    color:white;
+    display: flex;
+    padding-right: 20px;
+}
+.navbar h2{
+    margin-left: 10px;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap:15px;
+    font-size: 1.2rem;
+    right:0;
+    margin-left: auto;
+}
+Link{
+    font-style: none;
+}
+body{
+    margin: 0;
+}
+.card-main{
+    margin-top: 20px;
+    margin-left:30px;
+}
+.card{
+    border:1px solid black;
+    height:300px;
+    width:300px;
+    margin-bottom: 30px;
+    border-radius: 5px 5px 5px 5px;
+}
+.card img{
+    width:300px;
+    height:160px;
+}
+.card:hover{
+    margin-bottom: 10px;
+    box-shadow: 10px 5px 5px 5px rgb(183, 181, 184);
+}
+.cart{
+    height:30px;
+    width:120px;
+    background-color: white;
+    color:rgb(37, 9, 88);
+    border:1px solid rgb(37, 9, 88);
+    border-radius: 5px 5px 5px 5px;
+}
+.cart:hover{
+    background: rgb(37, 9, 88);
+    color:white;
+    cursor: pointer;
+}
+.content{
+    margin-left:10px;
+}
+.removecart{
+    height:30px;
+    width:150px;
+    background-color: white;
+    color:rgb(37, 9, 88);
+    border:1px solid rgb(37, 9, 88);
+    border-radius: 5px 5px 5px 5px;
+}
+.removecart:hover{
+    background: rgb(37, 9, 88);
+    color:white;
+    cursor: pointer;
+}
+.card-loop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 20px;
+  padding: 0 20px; 
+  max-width: 1400px; 
+  margin: 0 auto;
+}
+.navbar a{
+    text-decoration: none;
+    color:white;
+}
+.navbar a:hover{
+    color:rgb(180, 127, 255);
+}
+.card-loop2{
+    display:grid;
+}
+.card2{
+    display:flex;
+}
+.card2 img{
+    height:200px;
+    width:300px;
+    margin-right:20px;
+}
+.cart-head{
+    margin-left:10px;
+    color: rgb(31, 13, 77);
+    text-shadow: 5px 5px 5px rgb(74, 21, 106);
+    font-style: italic;
+    font-size: 2rem;
+}
+.product-head{
+    color: rgb(31, 13, 77);
+    text-shadow: 5px 5px 5px rgb(74, 21, 106);
+    font-style: italic;
+    font-size: 2rem;
+}
+.About h1{
+    color: rgb(37, 9, 88);
+    margin-left: 20px;
+}
+.About h2{
+    color: rgb(37, 9, 88);
+    margin-left: 20px;
+}
+p{
+    width:50%;
+    margin-left: 30px;
+}
+li{
+    margin-top:10px;
+}
+@keyframes appearing{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.About{
+    animation: appearing 1s 
+}
+.about-design {
+  width: 35%;
+  position: relative;
+  min-height: 100vh;
+}
+
+.design-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(37, 9, 88, 0.1);
+  top: 50px;
+  right: 50px;
+}
+
+.design-square {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(37, 9, 88, 0.05);
+  bottom: 100px;
+  right: 100px;
+  transform: rotate(15deg);
+}
+
+.design-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 150px solid rgba(37, 9, 88, 0.08);
+  top: 300px;
+  right: 30px;
+  transform: rotate(-10deg);
+}
+
+.design-dots {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(37, 9, 88, 0.15) 2px, transparent 3px);
+  background-size: 20px 20px;
+  top: 200px;
+  right: 150px;
+}
+.main{
+    display: flex;
+}
+.footer{
+    background-color: rgb(30, 30, 30);
+    color:white;
+    width:100%;
+    margin-top:20px;
+    height:70px;
+}
+.footer p{
+    padding-top:20px;
+}
