@@ -1,0 +1,1 @@
+file created to count the most frequent word that has been occured in this file, through the pythin function, as week3 task of cosmicode python programming internship.
