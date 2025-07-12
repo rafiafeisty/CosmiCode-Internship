@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height:100%;
+        object-fit: cover;
+        width: 100%;
+        flex-shrink: 0;
+        display: block;
+        border-radius: 10px 10px 10x 10px;
+    }
+    .main-box{
+        margin-top:120px;
+        margin-left:auto;
+        margin-right:auto;
+        border-radius:10px 10px 10px 10px;
+        width:50%;
+    }
+    .slider{
+        width:700px;
+        height:400px;
+        position:relative;
+        overflow: hidden;
+        display: flex;
+        border-radius:10px 10px 10px 10px;
+    }
+    .inside-slider{
+        display: flex;
+    }
+    button{
+        width:40%;
+        height:40%;
+        background: none;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      font-size: 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 50%;
+      width:40px;
+      height: 40px;
+      transform: translateY(-50%);
+    }
+    .next{
+        right:1px;
+    }
+    .prev{
+        left: 10px;
+    }
+    .dots{
+        display: flex;
+        gap:7px;
+        position: absolute;
+        bottom:20px;
+        left:50%;
+        transform: translateY(-50%);
+    }
+    .dot{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+     .dot.active {
+            background-color: white;
+     }
+
+</style>
+<body>
+    <div class="main-box">
+        <h1>Image Slider</h1>
+        <div class="slider">
+            <div class="inside-slider">
+                <img src="https://wallpapers.com/images/hd/neon-city-sports-car-pfp-0t3rhpf6bce13oyg.jpg" alt="car1">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/dsc03346-1677272749.jpg?crop=0.657xw:0.815xh;0.197xw,0.185xh&resize=1200:*" alt="car2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy93W9Dk5wzrxt8cgtDHdbuAVlO9o-dpz4zA&s" alt="car3">
+                <img src="https://www.highstuff.com/wp-content/uploads/2024/05/bugatti-chiron.webp" alt="car4">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+            <div class="dots"></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const slider=document.querySelector(".inside-slider")
+        const sliderimg=document.querySelectorAll(".inside-slider img")
+        const prevbutton=document.querySelector(".prev")
+        const nextbutton=document.querySelector(".next")
+        const dotscontainer=document.querySelector(".dots")
+        let index=0
+        let interid;
+        let interval=3000
+        
+        sliderimg.forEach((_,i)=>{
+            const dot=document.createElement("div")
+            dot.classList.add("dot")
+            if(i==0){
+                dot.classList.add("active")
+            }
+            dot.addEventListener("click",()=>{
+                index=i
+                update()
+                clearinterval()
+            })
+            dotscontainer.appendChild(dot)
+        })
+        const dots=document.querySelectorAll(".dot")
+        startinterval()
+        function nextslider(){
+            index=(index+1)%sliderimg.length
+            update()
+        }
+        function prevslide(){
+            index=(index-1+sliderimg.length)%sliderimg.length
+            update()
+        }
+        function update(){
+            slider.style.transform=`translateX(-${index*100}%)`
+            dots.forEach(dot=>dot.classList.remove("active"))
+            dots[index].classList.add("active")
+        }
+        function startinterval(){
+            interid=setInterval(nextslider,interval)
+        }
+        function clearinterval(){
+            clearInterval(interid)
+            startinterval()
+        }
+        prevbutton.addEventListener("click",function(){
+            prevslide()
+            clearinterval()
+        })
+        nextbutton.addEventListener("click",function(){
+            nextslider()
+            clearinterval()
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<style>
+    body{
+        background-color: #f0f0f0;
+    }
+    .information{
+        margin-top: 150px;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 5px 5px 5px rgb(88, 107, 123);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: white;
+    }
+    .information h1{
+        font-size: 2rem;
+    }
+    .info-box{
+        width:60%;
+    }
+    button{
+        border: 1px solid rgb(23, 43, 61);
+        background-color: white;
+        color: black;
+        border-radius: 5px 5px 5px 5px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: rgb(23, 43, 61);
+        color:white;
+    }
+</style>
+<body>
+    <div class="information">
+        <h1>Changing Layout</h1>
+        <div class="info-box">
+            <h3>Computer</h3>
+            <p> A computer is a machine that can store and process information. Most computers rely on a binary system, which uses two variables, 0 and 1, to complete tasks such as storing data, calculating algorithms, and displaying information.</p>
+            <p id="hidden" style="display:none;">A computer is a programmable electronic device that can store, retrieve, and process data based on instructions. It is used for a wide range of tasks, from simple calculations to complex operations, and can be found in various forms, from smartphones to supercomputers. </p>
+        </div>
+        <div class="buttons">
+            <button value="default" id="styling" onclick="togglestyle()">Change Styling</button>
+            <button value="default" id="background" onclick="togglecolor()">Change Background color</button>
+            <button value="default" id="text" onclick="changeinfo()">Change Information</button>
+            <button value="default" id="more" onclick="more()">More Information</button>
+        </div>
+    </div>
+</body>
+<script>
+    function togglestyle(){
+        const val=document.getElementById("styling")
+        if(val.value=="default"){
+        const x = document.querySelector(".info-box");
+        x.style.fontStyle="italic"
+        val.value="toggle"
+        }
+        else{
+            const x = document.querySelector(".info-box");
+            x.style.fontStyle="normal"
+            val.value="default"
+        }
+    }
+    function togglecolor(){
+        const val=document.getElementById("background")
+        if(val.value=="default"){
+        const x = document.querySelector(".information");
+        x.style.background="#daf1ef"
+        val.value="toggle"
+        }
+        else{
+            const x = document.querySelector(".information");
+            x.style.background="white"
+            val.value="default"
+        }
+    }
+    function changeinfo(){
+        const val=document.getElementById("text")
+        if(val.value=="default"){
+            const x = document.querySelector(".info-box");
+            x.innerHTML=`<h3>Technology</h3>
+            <p>Technology is the use of scientific knowledge for practical purposes or applications, whether in industry or in our everyday lives. So, basically, whenever we use our scientific knowledge to achieve some specific purpose, we're using technology.</p>
+            <p id="hidden" style="display:none">Technology usage refers to the levels at which technology is utilized, including factors such as adherence, acceptance, and acceptability.</p>
+            `
+            val.value="toggle"
+        }
+        else{
+            const x = document.querySelector(".info-box");
+            x.innerHTML=`<h3>Computer</h3>
+            <p> A computer is a machine that can store and process information. Most computers rely on a binary system, which uses two variables, 0 and 1, to complete tasks such as storing data, calculating algorithms, and displaying information.</p>
+            <p id="hidden" style="display:none;">A computer is a programmable electronic device that can store, retrieve, and process data based on instructions. It is used for a wide range of tasks, from simple calculations to complex operations, and can be found in various forms, from smartphones to supercomputers. </p>
+            `
+            val.value="default"
+        }
+    }
+    function more(){
+        const val=document.getElementById("more")
+        if(val.value=="default"){
+            const x = document.getElementById("hidden")
+            x.style.display="block"
+            val.value="toggle"
+            val.innerHTML="Less Information"
+        }
+        else{
+            const x = document.getElementById("hidden")
+            x.style.display="none"
+            val.value="default"
+            val.innerHTML="More Information"
+        }
+    }
+</script>
+</html>
