@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Eating</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #388E3C;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .content img {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .content img {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header, nav, .container, footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Healthy Eating</h1>
+        <p>Tips and Tricks to Stay Healthy</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Recipes</a>
+        <a href="#">Tips</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIeX67XaT_3HsNh8VDLpTKcRcY15kkJSWhNw&s" alt="Healthy Food">
+            <div class="text">
+                <h2>Why Eat Healthy?</h2>
+                <p>Eating a healthy diet is not about strict limitations or depriving yourself. It’s about feeling great, having more energy, improving your health, and boosting your mood.</p>
+                <p>Focus on including more whole foods like vegetables, fruits, whole grains, and lean proteins in your meals.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Healthy Life. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

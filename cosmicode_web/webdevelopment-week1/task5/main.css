@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.navbar{
+    background-color: rgb(8, 8, 77);
+    color:white;
+    height:60px;
+    width:100%;
+    font-size: 1.2rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    display:inline-block;
+    right:0;
+    text-align: right;
+}
+
+.navbar a:hover{
+    color:rgb(76, 147, 183);
+    display:inline-block;
+    margin-top: 15px;
+}
+.name{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+.forest{
+    width:90%;
+    height:400px;
+    opacity:0.8;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(125, 133, 138);
+}
+.heading{
+    color: rgb(19, 27, 76);
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 1.5px 1.5px rgb(76, 147, 183);
+    margin-left: 90px;
+    font-size: 3rem;
+}
+.card{
+    width:300px;
+    box-shadow: 6px 6px 6px 6px rgb(125, 133, 138);
+    margin:30px 30px 30px 30px;
+    border-radius:5px 5px 5px 5px;
+    height:400px;
+}
+.card img{
+    height:200px;
+    width:300px;
+}
+.allblogs{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap:10px;
+    margin-bottom: 30px;;
+}
+.allblogs h5{
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-left: 10px;
+}
+.allblogs p{
+    margin-left: 8px;
+}
+header {
+background: #2c3e50;
+color: white;
+padding: 1rem 0;
+}
+
+.container {
+width: 80%;
+margin: auto;
+overflow: hidden;
+}
+ nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+}
+
+nav ul li {
+margin-left: 20px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+nav a:hover {
+color: #f39c12;
+}

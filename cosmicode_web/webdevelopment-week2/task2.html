@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+</head>
+<style>
+    body{
+        margin:0;
+        padding:0;
+    }
+    .navbar{
+        background-color: #0a3c5b;
+        height:70px;
+        width:100%;
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+        font-weight: 700;
+        position: relative;
+    }
+    .navbar p:hover{
+        color: bisque;
+    }
+    .content{
+        display: none;
+        color: #0a3c5b;
+        z-index: 4;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 4px 4px 4px 4px;
+        width:150px;
+    }
+    .content p{
+        border-bottom: 1px solid black;
+    }
+    .content p:hover{
+        color: #125883;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+    .text:hover .content{
+        display: block;
+    }
+    @media screen and (max-width:800px){
+        .navbar{
+            flex-direction: row;
+            display: flex;
+            align-items: flex-start;
+        }
+        .navbar p{
+            margin-right: 10px;
+        }
+    }
+</style>
+<body>
+    <div class="navbar">
+        <p>Home</p>
+        <p>Contact Us</p>
+        <p>About</p>
+        <div class="text"><p>Services</p>
+        <div class="content">
+            <p>Make Blog</p>
+            <p>View Blog</p>
+            <p>Edit Blog</p>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
