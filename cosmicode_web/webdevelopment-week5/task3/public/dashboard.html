@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<style>
+    body{
+        margin:0
+    }
+    .header{
+        height:50px;
+        width:100%;
+        display: flex;
+        align-items: center;
+        color:white;
+        background-color:rgb(3, 78, 78);
+    }
+    .header h2{
+        margin-left: 10px;
+    }
+    .header .links{
+        display: flex;
+        margin-left:auto;
+    }
+    .links a{
+        text-decoration: none;
+        color:white;
+        margin-right:10px;
+        margin-left:10px;
+        padding:10px;
+    }
+    .links a:hover{
+        color:rgb(5, 114, 114);
+        background-color: white;
+        border-radius: 5px 5px 5px 5px;
+    }
+    .board{
+        margin:auto;
+        margin-top: 130px;
+        width:30%;
+        border:1px solid rgb(3, 78, 78);
+        border-radius: 10px 10px 10px 10px;
+    }
+    .username{
+        height:40px;
+        color:white;
+        text-align:center;
+        background-color: rgb(5, 114, 114);
+        border-radius: 10px 10px 0px 0px;
+        padding-top: 5px;
+    }
+    .role{
+        margin-top:40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .footer {
+      background-color: rgb(30, 30, 30);
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin-top: 250px;
+      height: 90px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    .footer p {
+      padding-top: 20px;
+      margin: 0;
+    }
+    .main{
+        color: rgb(3, 78, 78);
+        text-align: center;
+        font-size: 2rem;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Authentication</h2>
+            <div class="links">
+                <a href="./login.html">Login</a>
+                <a href="./register.html">Register</a>
+            </div>
+        </div>
+        <h1 class="main">Dashboard</h1>
+        <div class="board">
+            <div class="username" id="username"></div>
+            <div class="role" id="role"></div>
+        </div>
+        <div class="footer">
+        <p>©2025 | Cosmicode Internship Week5</p>
+      </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        const username=document.getElementById("username")
+        const role=document.getElementById("role")
+        const user2=localStorage.getItem("username")
+        const role2=localStorage.getItem("role")
+        username.textContent=user2
+        role.textContent=role2
+        localStorage.clear("role")
+        localStorage.clear("username")
+    })
+</script>
+</html>

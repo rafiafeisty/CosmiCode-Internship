@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    .header {
+      height: 60px;
+      width: 100%;
+      background-color: rgb(8, 78, 54);
+      color: white;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .header h1 {
+      margin-left: 10px;
+    }
+    .header .links {
+      display: flex;
+      color: white;
+      text-decoration: none;
+      margin-left: auto;
+    }
+    .links a {
+      text-decoration: none;
+      color: white;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .links a:hover {
+      color: rgb(50, 122, 97);
+    }
+    .blogs {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+    }
+    .card {
+      margin-top: 20px;
+      height: 200px;
+      width: 250px;
+      border: 1px solid rgb(8, 78, 54);
+      border-radius: 10px 10px 10px 10px;
+      align-items: center;
+      text-align: center;
+    }
+    .ruler {
+      height: 2px;
+      background-color: rgb(8, 78, 54);
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .card:hover {
+      box-shadow: 5px 5px 5px 5px rgba(8, 78, 54, 0.5);
+    }
+    .main {
+      text-align: center;
+      color: rgb(5, 70, 67);
+      font-size: 2rem;
+    }
+    .footer {
+      background-color: rgb(30, 30, 30);
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin-top: 250px;
+      height: 90px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    .footer p {
+      padding-top: 20px;
+      margin: 0;
+    }
+    .icon:hover {
+      cursor: pointer;
+    }
+    .details {
+      margin-top: 10px;
+      background-color: white;
+      color: rgb(5, 70, 67);
+      border: 1px solid rgb(5, 70, 67);
+      border-radius: 5px 5px 5px 5px;
+      height: 30px;
+      width: 70px;
+      padding: 5px;
+    }
+    .details:hover {
+      color: white;
+      cursor: pointer;
+      background-color: rgb(5, 70, 67);
+    }
+    .main {
+      margin: auto;
+      margin-top: 30px;
+      color: rgb(5, 70, 67);
+      font-size: 2rem;
+    }
+    .content h3 {
+      color: rgb(5, 70, 67);
+    }
+    .content {
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+    .title,
+    .content2 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .submit {
+      margin-top: 10px;
+      background-color: white;
+      color: rgb(5, 70, 67);
+      border: 1px solid rgb(5, 70, 67);
+      border-radius: 5px 5px 5px 5px;
+      height: 40px;
+      width: 70px;
+      padding: 5px;
+      margin-left: 10px;
+    }
+    .submit:hover {
+      color: white;
+      cursor: pointer;
+      background-color: rgb(5, 70, 67);
+    }
+    input {
+      height: 30px;
+      border: 1px solid rgb(5, 70, 67);
+      border-radius: 5px 5px 5px 5px;
+      width: 60%;
+      margin-top: 10px;
+      padding-left: 7px;
+    }
+    .form-group {
+      width: 40%;
+      display: flex;
+      align-items: cemter;
+    }
+    label {
+      color: rgb(5, 70, 67);
+    }
+    #comments li {
+      background-color: #f1fdf6;
+      margin-top: 10px;
+      width: 60%;
+      padding: 12px 16px;
+      border: 1px solid rgb(5, 70, 67);
+      border-radius: 8px;
+      position: relative;
+      color: rgb(5, 70, 67);
+      font-family: Arial, sans-serif;
+    }
+    .footer {
+      background-color: rgb(30, 30, 30);
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin-top: 250px;
+      height: 90px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    .footer p {
+      padding-top: 20px;
+      margin: 0;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Blog Home</h1>
+        <div class="links">
+          <a href="./index.html">Home</a>
+          <a href="./made.html">Made Blog</a>
+          <a href="./about.html">About</a>
+        </div>
+      </div>
+      <h1 class="main">Details</h1>
+      <div class="content">
+        <div class="title">
+          <strong><h3>Title:</h3></strong>
+          <p id="title"></p>
+        </div>
+        <div class="content2">
+          <strong><h3>Content:</h3></strong>
+          <p id="content2"></p>
+        </div>
+        <div class="comments">
+          <strong><h3>Comments:</h3></strong>
+          <div class="comment">
+            <label for="comment">Make a Comment</label>
+            <div class="form-group">
+              <input type="text" id="commen" />
+              <button class="submit" onclick="uploading()">Upload</button>
+            </div>
+            <ul id="comments"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>©2025 | Cosmicode Internship Week5</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let id2 = "";
+    document.addEventListener("DOMContentLoaded", function () {
+      const title = document.getElementById("title");
+      const content2 = document.getElementById("content2");
+      const title2 = localStorage.getItem("title");
+      const content22 = localStorage.getItem("content");
+      title.textContent = title2;
+      content2.textContent = content22;
+      const storedid = localStorage.getItem("id");
+      id2 = parseInt(storedid);
+      loadingcomments();
+    });
+    async function uploading() {
+      const comment = document.getElementById("commen").value;
+      if (!comment) {
+        alert("Please enter a comment");
+        return;
+      }
+      await fetch(`/comment/${id2}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content: comment }),
+      }).then((res) => {
+        if (!res.ok) {
+          alert("Comment not uploaded");
+        } else {
+          document.getElementById("commen").value = "";
+          loadingcomments();
+        }
+      });
+    }
+    async function loadingcomments() {
+      const response = await fetch(`/comment/${id2}`);
+      const comments = await response.json();
+      const commentList = document.getElementById("comments");
+      commentList.innerHTML = "";
+
+      comments.forEach((comment) => {
+        const li = document.createElement("li");
+        li.textContent = `${comment.text} - ${new Date(
+          comment.created_at
+        ).toLocaleString()}`;
+        commentList.appendChild(li);
+      });
+    }
+  </script>
+</html>
